@@ -13,4 +13,4 @@ desejadas;
 As funcionalidades deverão ser desenvolvidas em duas versões:
 1. a primeira priorizando o uso de recursividade sempre que possível;
 2. a segunda priorizando uso de compreensão de listas sempre que possível.
-(3. há uma versão usando ordem superior em todas as funções)
+3. (há uma versão usando ordem superior em todas as funções)
