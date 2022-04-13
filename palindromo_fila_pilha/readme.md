@@ -1,4 +1,7 @@
+PALÍNDROMO USANDO FILA E PILHA
+
 Neste trabalho, você deverá criar um programa em C que recebe como entrada uma string de tamanho arbitrário e verifica se ela é um palíndromo usando necessarimamente pilha e fila. O tratamento da string e da função palíndromo é livre. 
+
 
 Formato de entrada
 
