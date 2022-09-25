@@ -13,12 +13,12 @@ Os vetores serão utilizados para a construção das tabelas de referência em o
 
 Os métodos de ordenação a serem utilizados na construção das tabelas de referência devem ser definidos de acordo com as seguintes regras:
 
-Escolher 1 entre: Bolha, Seleção e Inserção 
-Escolher 1 entre: Shellsort, Heapsort e Mergesort
-Incluir Quicksort com mediana de três
-Incluir Pancake Sort
-Incluir Counting Sort (apenas para o campo dos inteiros, não é baseado em comparações)
-Incluir outro método, excluindo-se os citados nos itens anteriores, à escolha do grupo.
+* Escolher 1 entre: Bolha, Seleção e Inserção 
+* Escolher 1 entre: Shellsort, Heapsort e Mergesort
+* Incluir Quicksort com mediana de três
+* Incluir Pancake Sort
+* Incluir Counting Sort (apenas para o campo dos inteiros, não é baseado em comparações)
+* Incluir outro método, excluindo-se os citados nos itens anteriores, à escolha do grupo.
 
 3) Construção das Tabelas de Referência
 
