@@ -4,10 +4,10 @@
 #include <ctype.h>
 
 //Grupo 1
-//Sistema de Informação para registro dos pacientes do Hospital Universitário da UFU
+//Sistema de InformaÃ§Ã£o para registro dos pacientes do Hospital UniversitÃ¡rio da UFU
 
 //0
-struct paciente //se acrescentar elementos na struct, tem q aumentar o divisor do tamanho em "quantas_pessoas_cadastradas" - por enquanto são 7
+struct paciente //se acrescentar elementos na struct, tem q aumentar o divisor do tamanho em "quantas_pessoas_cadastradas" - por enquanto sÃ£o 7
 {
     char nome[100];
     char sexo[20];
@@ -35,7 +35,7 @@ void cadastro(struct paciente T[], int *qtd)
 
         printf("\nDigite o nome do paciente: \n");
         setbuf(stdin,NULL);
-        scanf("%[^\n]s",T[*qtd].nome); //pego o valor e passo para o endereço da struct paciente
+        scanf("%[^\n]s",T[*qtd].nome); //pego o valor e passo para o endereÃ§o da struct paciente
         fprintf(f,"%s\n",T[*qtd].nome); //passo para o arquivo
 
         printf ("\nDigite sexo do paciente: \n");
@@ -76,15 +76,15 @@ void cadastro(struct paciente T[], int *qtd)
         printf("\n");
 
     (*qtd)++;//conta +1 pra saber quantos cadastros tem -> vai ser usado na mostra todos
-    //a declaração ta no menu, se n, zera toda vez aqui
-    //() pq se n pega só o valor do qtd, pega o endereço da variavel seguinte. então é precedencia
+    //a declaraÃ§Ã£o ta no menu, se n, zera toda vez aqui
+    //() pq se n pega sÃ³ o valor do qtd, pega o endereÃ§o da variavel seguinte. entÃ£o Ã© precedencia
     fclose(f);
 }
 
 //2
 void mostra_dados(struct paciente T[], int *qtd)
 {
-    for(int i=0; i<*qtd; i++) //mostra apenas os q acabei de cadastrar, então faz o laço pra printar. pega o valor correspondente do cadastro
+    for(int i=0; i<*qtd; i++) //mostra apenas os q acabei de cadastrar, entÃ£o faz o laÃ§o pra printar. pega o valor correspondente do cadastro
     //o qtd vai pegar o valor do total q ta registrado no ponteiro
     {
         printf("\nNome do paciente: %s\n",T[i].nome);
@@ -100,7 +100,7 @@ void mostra_dados(struct paciente T[], int *qtd)
 }
 
 //3
-void mostra1(struct paciente T[]) //ta no menu a indicação q é a posição 0 do vetor
+void mostra1(struct paciente T[]) //ta no menu a indicaÃ§Ã£o q Ã© a posiÃ§Ã£o 0 do vetor
 {
     printf("Nome: %s\n", T->nome);
     printf ("Sexo: %s\n", T->sexo);
@@ -131,9 +131,9 @@ void mostra_por_idade (struct paciente T[])  //crescente
         exit(1);
     }
 
-    while(ch!=EOF) //lê todo o arquivo
+    while(ch!=EOF) //lÃª todo o arquivo
     {
-        fscanf(f," %[^\n]s",T[i].nome); //ta pegando tudo como está no arquivo, como tenhoq  imprimir tudo, coloco o fscanf pra tudo q é pra imprimir
+        fscanf(f," %[^\n]s",T[i].nome); //ta pegando tudo como estÃ¡ no arquivo, como tenhoq  imprimir tudo, coloco o fscanf pra tudo q Ã© pra imprimir
         fscanf (f,"%s", T[i].sexo);
         fscanf (f,"%s", T[i].cpf);
         fscanf (f,"%s", T[i].telefone);
@@ -148,9 +148,9 @@ void mostra_por_idade (struct paciente T[])  //crescente
     tam=i-1;
 
 
-    for(i=1; i<tam; i++)//vai aumentando o i até chegar no tamanho, o i serve para ir diminuindo do tamanho do j
-        //i=1,j=0,j<tam-1, ou seja, como j começa no [0], vai passar por todo vetor.
-        //na troca ele vai 'empurrando' o maior (se for crescente) pro ultimo lugar, dai eu posso diminuir o tamanho do laço (hands o i++ no j<tam-i) e vou comparando só os outros, ate q esteja tudo certo.
+    for(i=1; i<tam; i++)//vai aumentando o i atÃ© chegar no tamanho, o i serve para ir diminuindo do tamanho do j
+        //i=1,j=0,j<tam-1, ou seja, como j comeÃ§a no [0], vai passar por todo vetor.
+        //na troca ele vai 'empurrando' o maior (se for crescente) pro ultimo lugar, dai eu posso diminuir o tamanho do laÃ§o (hands o i++ no j<tam-i) e vou comparando sÃ³ os outros, ate q esteja tudo certo.
         for(j=0; j<tam-i; j++)
             if(T[j+1].idade<T[j].idade)//aqui faz a troca
             {
@@ -181,7 +181,7 @@ void mostra_por_idade (struct paciente T[])  //crescente
 }
 
 //5
-void mostra_por_nome (struct paciente T[]) //ordem alfabética normal A->Z
+void mostra_por_nome (struct paciente T[]) //ordem alfabÃ©tica normal A->Z
 {
     FILE *f;
     int i=0,tam,j; //tam descobre o tam do arquivo
@@ -212,14 +212,14 @@ void mostra_por_nome (struct paciente T[]) //ordem alfabética normal A->Z
     tam=i-1;
 
 
-    for(i=1; i<tam; i++)//vai aumentando o i até chegar no tamanho, o i serve para ir diminuindo do tamanho do j
-        //i=1,j=0,j<tam-1, ou seja, como j começa no [0], vai passar por todo vetor.
-        //na troca ele vai 'empurrando' o maior (se for crescente) pro ultimo lugar, dai eu posso diminuir o tamanho do laço (hands o i++ no j<tam-i) e vou comparando só os outros, ate q esteja tudo certo.
+    for(i=1; i<tam; i++)//vai aumentando o i atÃ© chegar no tamanho, o i serve para ir diminuindo do tamanho do j
+        //i=1,j=0,j<tam-1, ou seja, como j comeÃ§a no [0], vai passar por todo vetor.
+        //na troca ele vai 'empurrando' o maior (se for crescente) pro ultimo lugar, dai eu posso diminuir o tamanho do laÃ§o (hands o i++ no j<tam-i) e vou comparando sÃ³ os outros, ate q esteja tudo certo.
         for(j=0; j<tam-i; j++)
             if(strcmp(T[j+1].nome,T[j].nome)<0)//aqui faz a troca
-            //se é menor retorna negativo
-            //se é maior retorna positvo
-            //se é igual retorna 0
+            //se Ã© menor retorna negativo
+            //se Ã© maior retorna positvo
+            //se Ã© igual retorna 0
             {
                 temp=T[j];
                 T[j]=T[j+1];
@@ -286,7 +286,7 @@ void procurar_por_nome (struct paciente T[])
 {
 
     FILE *f;
-    char nome[100],ch[100]; //ch é a variavel pra armazenar a string do arquivo
+    char nome[100],ch[100]; //ch Ã© a variavel pra armazenar a string do arquivo
     int i=0;
 
     f=fopen ("arquivo_hospital.txt","r");
@@ -303,7 +303,7 @@ void procurar_por_nome (struct paciente T[])
     while (fgets(ch, 100, f))//enquanto tem string ta pegando(pq coloquei o tam do vetor alto)
         //fgets vai pegando enquanto chegar no tamanho ou no \n, o q achar primeiro
     {
-        if (strstr(ch, nome))  //vê se 'nome'(a string menor) está contida em 'ch'(q no caso é a linha (pq pega toda a linha, ja q o tam é alto)do meu arquivo)
+        if (strstr(ch, nome))  //vÃª se 'nome'(a string menor) estÃ¡ contida em 'ch'(q no caso Ã© a linha (pq pega toda a linha, ja q o tam Ã© alto)do meu arquivo)
         {
             i++; //itera pra ser !=0, se for =0 imprime dizendo q n ta cadastrado
             printf("\n%sja esta cadastrado(a).\n\n", ch);
@@ -356,7 +356,7 @@ void quantas_pessoas_cadastradas (struct paciente T[])  //se acrescentar element
         i++;
     }
     fclose(f);
-    tam=i/7; //8 é a qtd de dados q tem na struct ( 1 por linha)
+    tam=i/7; //8 Ã© a qtd de dados q tem na struct ( 1 por linha)
     printf("Quantidade de pacientes cadastrados: %d",tam);
 
 }
@@ -392,9 +392,9 @@ void dias_internacao(struct paciente T[]) //decrescente
     }
     tam=i-1;
 
-    for(i=1; i<tam; i++)//vai aumentando o i até chegar no tamanho, o i serve para ir diminuindo do tamanho do j
-        //i=1,j=0,j<tam-1, ou seja, como j começa no [0], vai passar por todo vetor.
-        //na troca ele vai 'empurrando' o maior (se for crescente) pro ultimo lugar, dai eu posso diminuir o tamanho do laço (hands o i++ no j<tam-i) e vou comparando só os outros, ate q esteja tudo certo.
+    for(i=1; i<tam; i++)//vai aumentando o i atÃ© chegar no tamanho, o i serve para ir diminuindo do tamanho do j
+        //i=1,j=0,j<tam-1, ou seja, como j comeÃ§a no [0], vai passar por todo vetor.
+        //na troca ele vai 'empurrando' o maior (se for crescente) pro ultimo lugar, dai eu posso diminuir o tamanho do laÃ§o (hands o i++ no j<tam-i) e vou comparando sÃ³ os outros, ate q esteja tudo certo.
         for(j=0; j<tam-i; j++)
             if(T[j+1].qtd_dias_internacao>T[j].qtd_dias_internacao)//aqui faz a troca
             {
@@ -455,14 +455,14 @@ void procura_f_m (struct paciente T[]) //separa por F ou M
     tam=i-1;
 
 
-    for(i=1; i<tam; i++)//vai aumentando o i até chegar no tamanho, o i serve para ir diminuindo do tamanho do j
-        //i=1,j=0,j<tam-1, ou seja, como j começa no [0], vai passar por todo vetor.
-        //na troca ele vai 'empurrando' o maior (se for crescente) pro ultimo lugar, dai eu posso diminuir o tamanho do laço (hands o i++ no j<tam-i) e vou comparando só os outros, ate q esteja tudo certo.
+    for(i=1; i<tam; i++)//vai aumentando o i atÃ© chegar no tamanho, o i serve para ir diminuindo do tamanho do j
+        //i=1,j=0,j<tam-1, ou seja, como j comeÃ§a no [0], vai passar por todo vetor.
+        //na troca ele vai 'empurrando' o maior (se for crescente) pro ultimo lugar, dai eu posso diminuir o tamanho do laÃ§o (hands o i++ no j<tam-i) e vou comparando sÃ³ os outros, ate q esteja tudo certo.
         for(j=0; j<tam-i; j++)
             if(strcmp(T[j+1].nome,T[j].nome)<0)//aqui faz a troca
-            //se é menor retorna negativo
-            //se é maior retorna positvo
-            //se é igual retorna 0
+            //se Ã© menor retorna negativo
+            //se Ã© maior retorna positvo
+            //se Ã© igual retorna 0
             {
                 temp=T[j];
                 T[j]=T[j+1];
@@ -523,14 +523,14 @@ void comorb (struct paciente T[]) //separa por F ou M
     tam=i-1;
 
 
-    for(i=1; i<tam; i++)//vai aumentando o i até chegar no tamanho, o i serve para ir diminuindo do tamanho do j
-        //i=1,j=0,j<tam-1, ou seja, como j começa no [0], vai passar por todo vetor.
-        //na troca ele vai 'empurrando' o maior (se for crescente) pro ultimo lugar, dai eu posso diminuir o tamanho do laço (hands o i++ no j<tam-i) e vou comparando só os outros, ate q esteja tudo certo.
+    for(i=1; i<tam; i++)//vai aumentando o i atÃ© chegar no tamanho, o i serve para ir diminuindo do tamanho do j
+        //i=1,j=0,j<tam-1, ou seja, como j comeÃ§a no [0], vai passar por todo vetor.
+        //na troca ele vai 'empurrando' o maior (se for crescente) pro ultimo lugar, dai eu posso diminuir o tamanho do laÃ§o (hands o i++ no j<tam-i) e vou comparando sÃ³ os outros, ate q esteja tudo certo.
         for(j=0; j<tam-i; j++)
             if(strcmp(T[j+1].nome,T[j].nome)<0)//aqui faz a troca
-            //se é menor retorna negativo
-            //se é maior retorna positvo
-            //se é igual retorna 0
+            //se Ã© menor retorna negativo
+            //se Ã© maior retorna positvo
+            //se Ã© igual retorna 0
             {
                 temp=T[j];
                 T[j]=T[j+1];
