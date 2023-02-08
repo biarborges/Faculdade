@@ -1,0 +1,178 @@
+.linkEntrar {
+    right: 0;
+    margin: 0 50px;
+    position: absolute;
+}
+
+.preco{
+    font-size: 30px;
+    display: inline;
+    margin-left: 10px;
+}
+
+button{
+    width: 200px;
+    height: 40px;
+}
+
+#interesse{
+    background-color: transparent;
+    color: #ec797b;
+    border: solid 2px #ec797b;
+}
+#interesse:hover{
+    color: #EC6164;
+    border: solid 2px #EC6164;
+}
+
+.esquerda{
+    max-width: 60%;
+    float: left;
+    margin: 0 20px;
+    padding: 0 10px;
+
+}
+
+.modal {
+    background-color: #0006;
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    z-index: 1;
+}
+
+.modalContent {
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ec7072;
+    box-shadow: 0 0 5px #a1b1c4;
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 3px;
+}
+
+img[src=""] {
+    display: none;
+}
+
+.imagemPrincipal {/*div*/
+    width: 500px;
+    height: 500px;
+    position: relative;
+}
+
+.imagemPrincipal img {
+    max-width: 480px;
+    max-height: 480px;
+    display: none;
+}
+
+.fotosExtras img {
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+}
+
+img.imgPequenaAtiva{
+    border-bottom: solid #EC6164;
+}
+
+img.imgGrandeAtiva{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+   
+}
+
+#infos{
+    max-width: 40%;
+    display: inline-block;
+
+    padding: 0 100px;
+}
+
+#partes{
+    padding: 10px 20px;
+}
+
+@media all AND (min-width: 580px) {
+    .imagemPrincipal img{
+        max-width: 480px;
+        max-height: 480px;
+    }
+}
+
+@media all AND ((min-width: 400px) AND (max-width: 579px)) {
+    .imagemPrincipal img{
+        max-width: 300px;
+        max-height: 300px;
+    }
+
+    .imagemPrincipal { /*div*/
+        max-width: 320px;
+        max-height: 320px;
+    }
+}
+
+@media all AND (max-width: 399px) {
+    .imagemPrincipal img{
+        max-width: 180px;
+        max-height: 180px;
+    }
+
+    .imagemPrincipal { 
+        max-width: 200px;
+        max-height: 200px;
+    }
+
+}
+
+
+@media all AND ((max-width: 1099px) AND (min-width: 900px)){
+    #infos {
+        max-width: 30%;
+        padding: 0px;
+    }
+
+
+}
+
+@media all AND ((max-width: 899px) ){
+    #infos {
+        margin-top: 50px;
+        max-width: 80%;
+        padding: 0px;
+    }
+
+    .esquerda{
+        max-width: 100%;
+    }
+}
+
+@media all AND ((min-width: 1100px) ){
+    #infos {
+        margin-left: 50px;
+        max-width: 40%;
+        padding: 0px;
+    }
+}
+
+
+
+@media all AND (max-width: 500px) {
+    .preco {
+        font-size: 20px;
+    }
+}
+
+

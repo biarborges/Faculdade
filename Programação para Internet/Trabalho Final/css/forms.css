@@ -1,0 +1,21 @@
+form{
+    width: 50%;
+    max-width: 300px;
+    margin: 50px auto;
+}
+
+
+input, select {
+    padding: 8px;
+    width: 100%;
+    border: 0.5px solid #a1b1c4;
+    border-radius: 3px;
+}
+
+input[type=checkbox] {
+    width: auto;
+}
+
+input[type=number] {
+    width: 40%;
+}

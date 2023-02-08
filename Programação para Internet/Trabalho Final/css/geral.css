@@ -1,0 +1,83 @@
+button{
+    cursor: pointer;
+    padding: 3px;
+    margin: 10px;
+    background-color: #EC6164;
+    border-color: transparent;
+    border-radius: 5px;
+    color: #F8EFED;
+    font-size: medium;
+    
+}
+
+button:hover{
+    background-color: #ec7072;
+}
+
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #3A424C;
+
+    margin: 0;
+}
+
+header{
+    width: 98%;
+    text-align: center;    
+    padding: 1%;
+
+    background-color: #F8EFED;
+}
+
+
+main {
+    padding: 10px;
+    position: relative;
+}
+
+a {
+    cursor: pointer;
+    color: #EC6164;
+    width: max-content;
+}
+
+
+h2{
+    margin: 10px 20px;
+}
+
+
+
+span{
+    color: red;
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: small;
+}
+
+@media all AND (max-width: 300px) {
+    header {
+        max-width: 100%;
+    }
+}
+
+@media all AND (max-width: 300px){
+    .botaoVoltar{
+        position: relative;
+
+    }
+}
+
+@media all AND (max-width: 500px) {
+
+    h3,h2{
+        font-size: 15px;
+    }
+}
+
+@media all AND (max-width: 600px) {
+    button, a{
+        max-width: 90%;
+    }
+}

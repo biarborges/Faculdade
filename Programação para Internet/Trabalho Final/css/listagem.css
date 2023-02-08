@@ -1,0 +1,65 @@
+.linkEntrar {
+    right: 0;
+    margin: 0 50px;
+    position: absolute;
+}
+
+.linkCard{
+    color: #3A424C;
+}
+
+.linkCard:hover{
+    color: #ec797b;
+    cursor: pointer;
+    text-decoration:none;
+}
+
+
+.buscaAvancada {
+    display: none;
+}
+
+.imgListagem {
+    width: 120px;
+    height: 120px;
+    float: left;
+    border-radius: 3px;
+    margin: 10px;
+}
+
+.descricao {
+    width: 90%;
+    height: 97px;
+    margin: 10px;
+    overflow: hidden;
+}
+
+.preco {
+    color: #EC6164;
+}
+
+article {
+    margin: 20px;
+    padding: 10px;
+    
+    border-radius: 3px;
+    background-color: #F8EFED;
+    box-shadow: 2px 2px 2px #f6e4e0;
+
+    width: 400px;
+    height: 249px;
+    display: inline-block;
+}
+
+@media all AND (max-width: 500px) {
+    article {
+    position: relative;        
+    width: 75%;
+    }
+
+    .imgListagem{
+        width: 60px;
+        height: 60px;
+    }
+
+}

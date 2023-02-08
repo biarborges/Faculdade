@@ -1,0 +1,13 @@
+th{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #EC6164;
+}
+
+td{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #3A424C;
+}
+
+svg{
+    cursor: pointer;
+}

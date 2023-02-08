@@ -1,0 +1,13 @@
+.linkEntrar {
+    right: 0;
+    margin: 0 50px;
+    position: absolute;
+}
+
+.botoesBusca {
+    text-align: center;
+}
+
+.buscaAvancada {
+    display: none;
+}
