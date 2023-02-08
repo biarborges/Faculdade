@@ -1,0 +1,41 @@
+
+.interesse{
+    text-align: center;
+}
+
+input{
+    border: 00.5px solid rgb(0, 0, 0);
+
+}
+
+main{
+    font-size: large;
+    background-color: rgb(232, 232, 232);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    max-width: 300px;
+    padding: 20px 40px 20px 10px;
+    border-radius: 3px;
+}
+
+li{
+    width: 90%;
+    padding: 5px 10px 5px 20px;
+    margin: 3px;
+    background-color: rgb(189,217,240);
+    border: 0.5px solid rgb(70,67,212);
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+li > button {
+    font-size: smaller;
+    float: right;
+    color: red;
+    border: none;
+    background-color: rgb(189,217,240);
+    cursor: pointer;
+}

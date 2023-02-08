@@ -1,0 +1,36 @@
+body{
+    background-image: url(img/teclado.jpg);
+}
+
+.loginBox{
+    color: rgb(0, 0, 0);
+    font-family: 'Times New Roman', Times, serif;
+    width: 50%;
+    max-width: 300px;
+    padding: 0px 50px 20px 30px;
+    background-color: white;
+    border: 0.8px solid #aaa;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 5px #888;
+
+}
+
+span{
+    color: red;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+input{
+    display: block;
+    margin: 10px 0px 10px 0px;
+    padding: 8px;
+    width: 100%;
+    border: 0.5px solid #888;
+    box-sizing: border-box;
+    
+}
