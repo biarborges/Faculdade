@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Rolagem Infinita</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background-color: #dedede;
+      font-family: Helvetica;
+      width: 60%;
+      margin: 0 auto;
+      margin-top: 3rem;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      color: #888;
+    }
+
+    .item {
+      background-color: white;
+      padding: 1rem;
+      margin: 1rem 0;
+    }
+
+    .item-image {
+      width: 150px;
+      height: 150px;
+      margin: 0 2rem;
+    }
+
+    .item-name {
+      font: 2em Verdana;
+      color: #888;
+    }
+
+    .item-price {
+      font: 2em Verdana;
+      color: darkgreen;
+      margin-left: 2rem;
+    }
+
+    .item-price::before {
+      content: 'R$ ';
+    }
+  </style>
+</head>
+
+<body>
+
+  <section id="products">
+    <h2>Nossos produtos</h2>
+
+    <!-- A tag template serve para definir um conteúdo que será usado como modelo. O conteúdo dentro do template não é exibido até que seja invocado usando JavaScript. O endereço, o nome e o preço da imagem são dinâmicos usando {{}}. Dentro das chaves o JavaScript vai preencher os valores reais no tempo de execução. -->
+    <template id="template">
+      <div class="item">
+        <img class="item-image" src="images/{{prod-image}}"></img>
+        <span class="item-name">{{prod-name}}</span>
+        <span class="item-price">{{prod-price}}</span>
+      </div>
+    </template>
+
+  </section>
+
+  <script>
+
+    function renderProducts(newProducts) {
+      
+      //procura pela id "produtos" no HTML e coloca em "prodsSection"
+      const prodsSection = document.getElementById("products");
+      //procura pela id "template" no HTML e coloca em "template"
+      const template = document.getElementById("template");
+
+      //usa um for para percorrer um array de produtos. Dentro do for, a variável "html" recebe o valor do innerHTML do template
+      // com o método replace(), substitui os espaços reservados no template pelos valores reais do produtos: o caminho, o nome e o preço
+      for (let product of newProducts) {
+        let html = template.innerHTML
+          .replace("{{prod-image}}", product.imagePath)
+          .replace("{{prod-name}}", product.name)
+          .replace("{{prod-price}}", product.price);
+
+        //as informações de cada produto serão anexadas ao final de "prodsSection"
+        prodsSection.insertAdjacentHTML("beforeend", html);
+      };
+    }
+
+    //async, que retorna uma promise, indica que a função contém código assíncrono e o await dentro da função faz com que haja uma espera do resultado da promise antes de prosseguir.
+    async function loadProducts() {
+
+      try {
+         //essa função vai tentar buscar a resposta de "more-products.php", uma lista de produtos usando o fetch. O await faz aguardar a resposta da promise antes de passar para a próxima linha
+        let response = await fetch("more-products.php");
+        //A função então verifica se a resposta está ok, se não, lança um erro com o statusText da resposta
+        if (!response.ok) throw new Error(response.statusText);
+        //o método json analisa os dados json retornados pelo script do lado do servidor e os atribui à variável products
+        var products = await response.json(); //vai ler a string produzida pelo servidor (fica no response do f12)
+      }
+      //pega os erros se ocorrerem e imprime no console
+      catch (e) {
+        console.error(e);
+        return;
+      }
+      //chama a renderProducts passando products
+      renderProducts(products);
+    }
+
+
+    //loadProducts é chamada uma vez quando a página é carregada pela primeira vez (window.onload) e também quando o usuário rola a página até o final (window.onscroll)
+
+    //chama loadProducts pela primeira vez
+    window.onload = function () {
+      loadProducts();
+    }
+
+    //onscroll-> aqui é disparado quando rola até o final
+    window.onscroll = function () {
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        loadProducts();
+      }
+    };
+
+  </script>
+
+</body>
+
+</html>
