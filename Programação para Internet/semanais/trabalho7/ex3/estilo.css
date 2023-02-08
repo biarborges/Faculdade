@@ -1,0 +1,28 @@
+h5{
+    text-align: center;
+}
+
+form{
+    font-family: Arial;
+    width: 60%;
+    max-width: 400px;
+    padding: 30px;
+    background-color: white;
+    border: 0.8px solid #aaa;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 5px #888;
+
+}
+
+
+button{
+    width: 100%;
+}
+
+html, body{
+    background-color: rgb(170, 170, 170);
+}
