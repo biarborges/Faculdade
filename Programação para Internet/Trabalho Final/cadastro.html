@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/geral.css">
+    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <script src="js/cadastro.js"></script>
+    <title>Cadastro</title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <img src="images/logo-no-background.svg" alt="Logo Inside Venda">
+        </a>
+    </header>
+
+    <div>
+        <form name="formCadastro" action="php/cadastro.php" method="post">
+
+            <h3>Faça o cadastro no Inside Venda </h3>
+
+            <div>
+                <input type="hidden" name="codigo" value="a0000">
+            </div>
+
+            <div>
+                <p><label for="nome">*Nome Completo:</label></p>
+                <input type="text" id="nome" name="nome">
+                <span></span>
+            </div>
+
+            <div>
+                <p><label for="cpf">*CPF:</label></p>
+                <input type="text" id="cpf" name="cpf">
+                <span></span>
+            </div>
+
+            <div>
+                <p><label for="email">*E-mail:</label></p>
+                <input type="email" id="email" name="email">
+                <span></span>
+            </div>
+
+            <div>
+                <p><label for="senha">*Senha:</label></p>
+                <input type="password" id="senha" name="senha">
+                <span></span>
+            </div>
+
+            <div>
+                <p><label for="tel">*Telefone:</label></p>
+                <input type="tel" id="tel" name="telefone">
+                <span></span>
+            </div>
+
+            <div>
+                <input type="checkbox" id="termos" name="termos" value="termos">
+                <label for="termos">*Estou de acordo com os <a href="termos.html" class="linkTermos">termos de serviço e
+                        a política de privacidade</a> do Inside Venda</label>
+                <span></span>
+            </div>
+
+            <button type="submit" class="botaoEntrar">Cadastrar</button>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

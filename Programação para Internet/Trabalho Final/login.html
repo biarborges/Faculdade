@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/geral.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <script src="js/login.js"></script>
+    <title>login</title>
+</head>
+<body>
+
+    <header>
+        <a href="index.html">
+            <img src="images/logo-no-background.svg" alt="Logo Inside Venda">
+        </a>
+    </header>
+
+    <main>
+        <form name="formLogin" action="php/login.php" method="post" id="formLogin">
+            <h3>Faça login no Inside Venda</h3>
+
+            <div>
+                <p><label for="email">E-mail:</label></p>
+                <input type="email" id="email" name="email">
+                <span></span>
+            </div>
+
+            <div>
+                <p><label for="senha">Senha:</label></p>
+                <input type="password" id="senha" name="senha">
+                <span></span>
+            </div>
+
+            <div>
+                <p id="loginFailMsg">E-mail e/ou senha incorreta. Por favor, tente novamente.</p>
+            </div>
+
+            <button type="submit" class="botaoEntrar">Entrar</button>
+
+            <a href="cadastro.html" class="linkCadastro">Ainda não tenho cadastro</a>
+
+        </form>
+
+    </main>
+    
+</body>
+</html>

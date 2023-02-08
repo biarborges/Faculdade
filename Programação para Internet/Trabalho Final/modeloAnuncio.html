@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang='pt-br'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='stylesheet' href='css/geral.css'>
+    <link rel='stylesheet' href='css/paginaProduto.css'>
+    <script src='js/paginaProduto.js'></script>
+    <script src='js/modal.js'></script>
+    <script src='js/carregaFuncoesAnuncio.js'></script>
+
+    <title> $titulo </title>
+    <style>
+        .modal {
+    background-color: #0006;
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    z-index: 1;
+}
+
+.modalContent {
+    background-color: rgb(255, 255, 255);
+    margin: auto;
+    padding: 20px;
+    border: 0.5px solid #ec7072;
+    box-shadow: 0 0 5px #3A424C;
+    width: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <a href='index.html'>
+            <img src='images/logo-no-background.svg' alt='Logo Inside Venda'>
+        </a>
+    </header>
+
+    <main>
+        <a href='login.html' class='linkEntrar'>Entrar</a>
+        <h2> $titulo </h2>
+        <div id='partes'>
+            <div class='esquerda'>
+                <div class='imagemPrincipal'>
+                    <img src='images/produto/violao.webp' alt='Imagem 1 do anuncio'>
+                    <img src='images/produto/violao2.webp' alt='Imagem 2 do anuncio'>
+                    <img src='images/produto/violao3.webp' alt='Imagem 3 do anuncio'>
+                    <img src='images/produto/violao4.webp' alt='Imagem 4 do anuncio'>
+                </div>
+                <div class='fotosExtras'>
+                    <img src='images/produto/violao.webp' alt='Imagem 1 do anuncio'>
+                    <img src='images/produto/violao2.webp' alt='Imagem 2 do anuncio'>
+                    <img src='images/produto/violao3.webp' alt='Imagem 3 do anuncio'>
+                    <img src='images/produto/violao4.webp' alt='Imagem 4 do anuncio'>
+                </div>
+
+            </div>
+
+            <div id='infos'>
+                <p class='preco'>R$ $preco </p>
+                <div id='compra'>
+                    <button id='interesse'>Tenho interesse</button>
+                </div>
+                <p> $descricao </p>
+
+                <address>
+                    <div>
+                        Estado: $estado
+                    </div>
+                    <div>
+                        Cidade: $cidade
+                    </div>
+                    <div>
+                        Bairro: $bairro
+                    </div>
+                </address>
+
+
+            </div>
+        </div>
+    </main>
+
+    <div class="modal">
+        <div class="modalContent">
+            <form name="formCadastro" action="php/cadastro.php" method="post">
+
+                <h3>Deixe uma mensagem para o vendedor </h3>
+    
+                <div>
+                    <p><label for="nome">*Contato:</label></p>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+    
+                <div>
+                    <p><label for="mensagem">*Mensagem:</label></p>
+                    <textarea id="mensagem" name="mensagem" rows="20" cols="60"></textarea>
+                </div>
+                <input type="hidden" name="codAnuncio" value="$codAnuncio">
+                <button id = "botaoCancelar" type="button" class="botaoEntrar">Fechar</button>
+                <button id= "botaoEnviar" type="submit" class="botaoEntrar">Enviar Mensagem</button>
+    
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

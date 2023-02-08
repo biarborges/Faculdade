@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/restrito.css">
+    <link rel="stylesheet" href="css/geral.css">
+    <link rel="stylesheet" href="css/listagem.css">
+    <title>Listagens dos Anúncios</title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <img src="images/logo-no-background.svg" alt="Logo Inside Venda">
+        </a>
+    </header>
+    <main>
+        <h3>Seus anúncios</h3>
+        <template>
+            <article>
+                <img class="imgListagem" src="fotos/{{enderecoDaImagem}}" alt="Imagem do anúncio">
+                <h3>{{titulo}}</h3>
+                <p class="preco">{{preco}}</p>
+                <p class="descricao">{{descricao}}</p>
+            </article>
+        </template>
+    </main>
+
+    <script>
+
+        function renderProducts(newProducts) {
+
+            const prodsSection = document.querySelector("main");
+            const template = document.querySelector("template")
+
+            for (let produto of newProducts) {
+                let html = template.innerHTML
+                    .replace("{{enderecoDaImagem}}", produto.nomeArquivoPrimeiraFoto)
+                    .replace("{{titulo}}", produto.titulo)
+                    .replace("{{preco}}", produto.preco)
+                    .replace("{{descricao}}", produto.descricao.substring(0, 500))
+
+                prodsSection.insertAdjacentHTML("beforeend", html);
+            };
+        }
+
+        async function loadProducts() {
+
+            try {
+                let response = await fetch("php/listagemUsuario.php");
+                if (!response.ok) throw new Error(response.statusText);
+                var products = await response.json();
+            }
+            catch (e) {
+                console.error(e);
+                return;
+            }
+
+            renderProducts(products);
+        }
+
+        window.onload = function () {
+            loadProducts();
+        }
+
+        window.onscroll = function () {
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                loadProducts();
+            }
+        };
+
+    </script>
+</body>
+
+</html>

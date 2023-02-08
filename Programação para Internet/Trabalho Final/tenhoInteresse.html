@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/geral.css">
+    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <script src="js/cadastro.js"></script>
+    <title>Tenho Interesse</title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <img src="images/logo-no-background.svg" alt="Logo Inside Venda">
+        </a>
+    </header>
+
+    <div>
+        <form name="formCadastro" action="php/cadastro.php" method="post">
+
+            <h3>Deixe uma mensagem para o vendedor </h3>
+
+            <div>
+                <p><label for="nome">*Contato:</label></p>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+
+            <div>
+                <p><label for="mensagem">*Mensagem:</label></p>
+                <textarea id="mensagem" name="mensagem" rows="20" cols="40"></textarea>
+            </div>
+
+            <button type="submit" class="botaoEntrar">Enviar Mensagem</button>
+
+        </form>
+
+    </div>
+
+</body>
+
+</html>

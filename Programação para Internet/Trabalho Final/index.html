@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:mso="urn:schemas-microsoft-com:office:office"
+    xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/geral.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <link rel="stylesheet" href="css/listagem.css">
+    <script src="js/home.js"></script>
+    <script src="js/checkLogin.js"></script>
+    <script src="js/carregaFuncoesHome.js"></script>
+    <title>Inside Venda</title>
+
+</head>
+
+<body>
+
+    <header>
+        <a href="index.html">
+            <img src="images/logo-no-background.svg" alt="Logo Inside Venda">
+        </a>
+    </header>
+
+    <main>
+        <a href="login.html" class="linkEntrar">Entrar</a>
+
+        <form>
+            <input type="text" id="busca" name="busca" placeholder="Estou procurando por...">
+            <div class="buscaAvancada">
+                <p>Procurar em:</p>
+                <div>
+                    <input type="checkbox" id="titulo" name="ehTitulo" value="true">
+                    <label for="titulo">Título</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="descricao" name="ehDescricao" value="true">
+                    <label for="descricao">Descrição</label>
+                </div>
+
+
+                <p>Preço:</p>
+                <input name="valorMinimo" id="valorMinimo" type="number" min="0.00" max="10000.00" step="any" placeholder="mínimo">
+                <input name="valorMaximo" id="valorMaximo" type="number" min="0.00" max="100000.00" step="any" placeholder="máximo">
+                <p><label for="categoria">Categoria:</label></p>
+                <select id="categoria" name="categoria">
+                    <option value="all" selected>Todas</option>
+                    <option value="vestuario">Vestuário</option>
+                    <option value="eletroeletronico">Eletroeletrônico</option>
+                    <option value="imovel">Imóvel</option>
+                    <option value="movel">Móvel</option>
+                    <option value="veiculo">Veículo</option>
+                    <option value="outro">Outro</option>
+                </select>
+            </div>
+            <div class="botoesBusca">
+                <button type="submit" id="botaoBusca">Procurar</button>
+                <button type="button" id="botaoBuscaAvancada">Busca Avançada</button>
+            </div>
+
+        </form>
+
+        <template>
+            <div>
+                <a href=/anuncios/{{codigo}}.php class="linkCard">
+                    <article class="container col-8 offset-2" </a>
+                        <img class="imgListagem" src="fotos/{{enderecoDaImagem}}" alt="Imagem do anúncio">
+                        <h3>{{titulo}}</h3>
+                        <p class="preco">R${{preco}}</p>
+                        <p class="descricao">{{descricao}}</p>
+                    </article>
+            </div>
+
+        </template>
+
+    </main>
+
+    <script>
+
+        var page = 1;
+
+        function renderProducts(newProducts) {
+
+            const prodsSection = document.querySelector("main");
+            const template = document.querySelector("template")
+
+            for (let produto of newProducts) {
+                let html = template.innerHTML
+                    .replaceAll("{{enderecoDaImagem}}", produto.nomeArquivoPrimeiraFoto)
+                    .replace("{{titulo}}", produto.titulo)
+                    .replace("{{preco}}", produto.preco)
+                    .replace("{{descricao}}", produto.descricao.substring(0, 500))
+                    .replaceAll("{{codigo}}", produto.codigo)
+
+                prodsSection.insertAdjacentHTML("beforeend", html);
+            };
+        }
+
+        async function loadProducts() {
+
+            try {
+
+                let _busca = document.querySelector("#busca");
+                let _ehTitulo = document.querySelector("#titulo");
+                let _ehDescricao = document.querySelector("#descricao");
+                let _valorMaximo = document.querySelector("#valorMaximo");
+                let _valorMinimo = document.querySelector("#valorMinimo");
+
+                const data = {
+                    busca: _busca.value,
+                    page: _page,
+                    ehTitulo: _ehTitulo.value,
+                    ehDescricao: _ehDescricao.value,
+                    valorMaximo: _valorMaximo.value,
+                    valorMinimo: _valorMinimo.value
+                };
+
+                const queryString = Object.keys(data)
+                    .map(key => key + '=' + data[key])
+                    .join('&');
+
+                let response = await fetch("php/consultarAnunciosController.php?" + queryString);
+                if (!response.ok) throw new Error(response.statusText);
+                var products = await response.json();
+            }
+            catch (e) {
+                console.error(e);
+                return;
+            }
+
+            renderProducts(products);
+        };
+
+        let form = document.querySelector('form');
+        form.onsubmit = loadProducts();
+
+        window.onscroll = function () {
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                loadProducts();
+            }
+        };
+
+    </script>
+
+
+</body>
+
+</html>

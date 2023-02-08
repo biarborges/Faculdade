@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/geral.css">
+    <link rel="stylesheet" href="css/listagem.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/forms.css">
+    <script src="js/home.js"></script>
+    <title>Demonstação Listagem</title>
+</head>
+<body>
+
+    <header>
+        <a href="index.html">
+            <img src="images/logo-no-background.svg" alt="Logo Inside Venda">
+        </a>
+    </header>
+
+<main>
+    <a href="login.html" class="botaoEntrar">Entrar</a>
+    
+    <form name="busca" action="action.php" method="post">
+        <input type="text" id="busca" name="busca" placeholder="Estou procurando por...">
+        <div class="buscaAvancada">
+            <p>Procurar em:</p>
+            <input type="checkbox" id="titulo" name="ondeBuscar[]" value="titulo">
+            <label for="titulo">Título</label>
+            <input type="checkbox" id="descricao" name="ondeBuscar[]" value="descricao">
+            <label for="descricao">Descrição</label>
+            <p>Preço:</p>
+            <input type="number" min="0.00" max="10000.00" step="any" placeholder="Preço mínimo">
+            <input type="number" min="0.00" max="100000.00" step="any" placeholder="Preço máximo">
+            <p><label for="estado">Categoria:</label></p>
+                <select id="estado" name="estado">
+                    <option value="all" selected>Todas</option>
+                    <option value="roupas">Roupas</option>
+                    <option value="tecnologia">Tecnologia</option>
+                    <option value="imoveis">Imóveis</option>
+                    <option value="veiculos">Veículos</option>
+                </select>
+        </div>
+        <div class="botoesBusca">
+            <button type="submit">Procurar</button>
+            <button type="button" id="botaoBuscaAvancada">Busca Avançada</button>
+        </div>   
+    </form>
+    <h2>Resultados:</h2>
+    <article>
+        <img class="imgListagem" src="images/listagem/galaxym13.jpg" alt="Smartphone Samsung Galaxy M13 Rosa">
+        <h3>Samsung Galaxy M13 Dual SIM 128 GB verde 4 GB RAM</h3>
+        <p class="preco">R$999</p>
+        <p class="descricao">
+            Fotografia profissional no seu bolso Descubra infinitas possibilidades para suas fotos com as 3 câmeras principais de sua equipe. Teste sua criatividade e jogue com iluminação, diferentes planos e efeitos para obter ótimos resultados.
+
+            Além disso, o dispositivo possui uma câmera frontal de 8 Mpx para que você possa tirar selfies divertidas ou fazer videochamadas.
+
+
+            Melhor desempenho
+
+            Sua memória RAM de 4 GB permite que seu smartphone funcione sem problemas e sem demora ao executar várias tarefas, jogar jogos ou navegar.
+
+
+            Desbloqueio facial e de impressão digital
+
+            Máxima segurança para que apenas você possa acessar o sua equipe. Você pode escolher entre o sensor de impressão digital para ativar seu telefone com um toque, ou o reconhecimento facial que permite desbloquear até 30% mais rápido.
+
+
+            Vida útil da bateria mais longa
+
+            Desconecte-se! Com a super bateria de 5000 mAh você terá energia por muito mais tempo para jogar, assistir séries ou trabalhar sem recarregar.
+        </p>
+    </article>
+    <article>
+        <img class="imgListagem" src="images/listagem/galaxya03.jpg" alt="Smartphone Samsung Galaxy A03 Preto">
+        <h3>Smartphone Samsung Galaxy A03s Dual 6.5 64gb 4gb Ram</h3>
+        <p class="preco">R$849</p>
+        <p class="descricao">
+            Smartphone Samsung Galaxy A03s, Câmera Tripla Traseira de 13MP + 2MP + 2MP, Selfie de 5MP, Tela Infinita de 6.5", 64GB, 4GB RAM, Octa Core, Bateria de 5000mAh, Dual Chip, Android 11.0
+
+
+
+            Características:
+            - Marca: Samsung
+            - Modelo: Galaxy A03s
+
+
+            Especificações:
+
+            Proteção:
+            - Proteção IP: Não
+
+
+            Interface:
+            - Formato do Aparelho: Barra
+            - Interface com o Usuário: Touch Screen
+
+
+
+            Sistema Operacional:
+            - Sistema Operacional + Versão: Android | 11.0
+            - Plataforma: 32 bit
+            - Loja de Aplicativos: Play Store / Galaxy Apps
+        </p>
+    </article>
+    <article>
+        <img class="imgListagem" src="images/listagem/motog71.jpg" alt="Smartphone Motorola Moto G71 Verde">
+        <h3>Moto G71 Dual SIM 128 GB neptune green 6 GB RAM</h3>
+        <p class="preco">R$1589</p>
+        <p class="descricao">
+            O Smartphone Moto G71 da Motorola é e equipado com tecnologia 5G e processador Snapdragon® 695, que dá mais velocidade e qualidade para as suas tarefas diárias.
+
+            Desenvolvido com o design de ponta moderno, conta com uma estrutura curva e bordas arredondadas, o que deixa ainda mais incrível. Sua tela OLED possui 6.4”, e produz imagens cristalinas, com brilho e cores impressionantes. Ideal para assistir séries e filmes com alta qualidade. Veja em tons vibrantes e mais realistas.
+
+            Um dos diferenciais que mais chamam a atenção do Smartphone Moto G71 é a sua câmera tripla traseira com ótima qualidade, tire fotos mais nítidas até mesmo em ambientes que possuem menos iluminação. Já a câmera frontal, conta com 16MP com resolução incrível.
+
+            Outro ponto que chama a atenção é a sua bateria de 5000mAh que te traz incrível performance e ainda mais tempo de uso. Ideal para quem necessita utilizar o smartphone por longas horas.
+
+            Você merece ter o Smartphone Moto G71 da Motorola
+        </p>
+    </article>
+    <article>
+        <img class="imgListagem" src="images/listagem/redminote10.jpg" alt="Smartphone Xiaomi Redmi Note 10 Cinza">
+        <h3>Xiaomi Redmi Note 10 5G Dual SIM 128 GB 8 GB RAM</h3>
+        <p class="preco">R$1610</p>
+        <p class="descricao">
+            Xiaomi Redmi Note 10 5G 128GB/8GB Ram Cinza O Redmi Note 10 5G é um smartphone Android completo, que não tem muito a invejar aos mais avançados dispositivos. Surpreendente é sua tela Touchscreen de 6.5 polegadas, que coloca esse Redmi no topo de sua categoria. A resolução também é alta: 2400x1080 pixel. Quanto às funções, no Redmi Note 10 5G realmente não falta nada. Especificações Técnicas Processador: 2x 2.2 GHz Cortex-A76 + 6x 2.0 GHz Cortex-A55 Chipset: Dimensity 700 MediaTek MT6833 RAM: 8GB Memória: 128GB FPS da Tela: 90 Hz Câmeras traseira: 48 Mp + 2 Mp + 2 Mp Câmera Frontal: 8 Mp Bateria: 5000 mAh
+        </p>
+    </article>
+    <article>
+        <img class="imgListagem" src="images/listagem/iphone11.jpg" alt="Smartphone Apple Iphone 11 Roxo">
+        <h3>Apple iPhone 11 (64 GB)</h3>
+        <p class="preco">R$3059</p>
+        <p class="descricao">
+            Grave vídeos 4K, faça belos retratos e capture paisagens inteiras com o novo sistema de câmera dupla. Tire fotos incríveis com pouca luz usando o modo Noite. Veja cores fiéis em fotos, vídeos e jogos na tela Liquid Retina de 6,1 polegadas***. Leve o desempenho sem precedentes do chip A13 Bionic para seus games, realidade aumentada e fotografia. Faça muito e recarregue pouco com a bateria para o dia todo**. E conte com resistência à água de até dois metros por até 30 minutos*.Avisos legais:*O iPhone 11 é resistente a respingos, água e poeira e foi testado em condições controladas em laboratório, classificado como IP68 segundo a norma IEC 60529 (profundidade máxima de até dois metros por até 30 minutos). A resistência a respingos, água e poeira não é uma condição permanente e pode diminuir com o tempo. Não tente recarregar um iPhone molhado. Veja instruções no Manual do Usuário para limpeza e secagem. Danos decorrentes de contato com líquidos não estão incluídos na garantia.**A duração da bateria varia de acordo com o uso e a configuração. Consulte o site do fabricante para obter mais informações.***A tela tem cantos arredondados. Quando medida como um retângulo, a tela do iPhone 11 tem 6,06 polegadas na diagonal. A área real de visualização é menor.****Carregadores sem fio padrão Qi vendidos separadamente.*****Como parte dos esforços da Apple para atingir seus objetivos ambientais, o iPhone 11 não vem com adaptador de energia nem EarPods. Você pode usar o adaptador de energia e os fones de ouvido da Apple que já tenha ou comprar esses acessórios separadamente.
+        </p>
+    </article>
+    <article>
+        <img class="imgListagem" src="images/listagem/galaxyzfold4.jpg" alt="Smartphone Samsung Galaxy Z Fold 4 Cinza">
+        <h3>Smartphone Samsung Galaxy Z Fold 4</h3>
+        <p class="preco">R$12600</p>
+        <p class="descricao">
+            O Samsung Galaxy Z Fold 4 é, sem dúvida, um dos smartphones Android mais avançados e abrangentes disponíveis no mercado, graças ao seu rico equipamento e recursos multimídia avançados. Tem um grande display de 7.6 polegadas com uma resolução de 2176x1812 pixel. As funcionalidades oferecidas pelo Samsung Galaxy Z Fold 4 são muitas e inovadoras. Começando pelo 5G que permite a transferência de dados e excelente navegação na internet. Enfatizamos a excelente memória interna de 1024 GB mas sem a possibilidade de expansão.
+            O Samsung Galaxy Z Fold 4 é um produto com poucos concorrentes em termos de multimídia graças à câmera de 50 megapixels que permite ao Samsung Galaxy Z Fold 4 tirar fotos fantásticas com uma resolução de 8165x6124 pixels e gravar vídeos em 4K a espantosa resolução de 3840x2160 pixels. A espessura de apenas 6.3 milímetros torna o Samsung Galaxy Z Fold 4 um dos telefones mais finos que existem.
+        </p>
+    </article>
+
+</main>
+
+    
+</body>
+</html>
