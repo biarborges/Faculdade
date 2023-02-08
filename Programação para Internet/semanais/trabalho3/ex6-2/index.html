@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Página de formulário para cadastro de cliente em html">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="estilo.css">
+    <title>Formulário em HTML - Cadastro de Cliente</title>
+</head>
+<body>
+    <header>
+        <h1>Formulário de Cadastro de Clientes</h1>
+    </header>
+    <main class="formulario">
+        <p>Preencha o formulário abaixo: </p>
+
+        <form action="cadatraCliente.php" method="post" enctype="multipart/form-data">
+            <fieldset>
+                <legend>Dados Pessoais</legend>
+                
+                <div class="nomeLabel">
+                    <label for="nome">*Nome:</label>
+                    <input type="text" id="nome" name="nome" minlength="2" maxlength="50" autofocus required>
+                </div>
+                
+                <div class="nomeLabel">
+                    <label for="email">*E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                    <span></span>
+                </div>
+                
+                <div class="nomeLabel">
+                    <label for="cpf">*CPF:</label>
+                    <input type="text" id="cpf" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"  placeholder="xxx.xxx.xxx-xx" required>
+                    <span></span>
+                </div>
+                
+                <div class="nomeLabel">
+                    <label for="idade">*Idade:</label>
+                    <input type="number" id="idade" name="idade" min="18" max="120" required>
+                    <span></span>
+                </div>
+                
+                <div class="nomeLabel">
+                    <label for="tel">*Telefone:</label>
+                    <input type="tel" id="tel" name="tel" required>
+                </div>
+                
+                <div class="nomeLabel">
+                    <label for="nasc">Data de Nascimento:</label>
+                    <input type="date" id="nasc" name="nasc">
+                </div>
+                
+                <div>
+                    <p>Sexo:</p>
+                
+                    <input type="radio" id="feminino" name="sexo" value="feminino">
+                    <label for="feminino">Feminino</label>
+                
+                    <input type="radio" id="masculino" name="sexo" value="masculino">
+                    <label for="masculino">Masculino</label>
+                </div>
+                
+                <div>
+                    <p>Estado Civil:</p>
+                
+                    <input type="radio" id="solteiro" name="estadoCivil" value="solteiro">
+                    <label for="solteiro">Solteiro(a)</label>
+                
+                    <input type="radio" id="casado" name="estadoCivil" value="casado">
+                    <label for="casado">Casado(a)</label>
+                
+                    <input type="radio" id="divorciado" name="estadoCivil" value="divorciado">
+                    <label for="divorciado">Divorciado(a)</label>
+                
+                    <input type="radio" id="uniaoEstavel" name="estadoCivil" value="uniaoEstavel">
+                    <label for="uniaoEstavel">União Estável</label>
+                </div>
+                
+                <div class="nomeLabel">
+                    <label for="cod">Código:</label>
+                    <input type="text" id="cod" name="cod" value="a0000" readonly>
+                </div>
+                
+            </fieldset>
+
+            <fieldset>
+                <legend>Endereço de Entrega</legend>
+                
+                <div>
+                    <input type="hidden" name="pais" value="Brasil">
+                </div>
+                
+                <div class="nomeLabel">
+                    <label for="cep">*CEP:</label>
+                    <input type="text" id="cep" name="cep" pattern="\d{5}-\d{3}" placeholder="xxxxx-xxx" required>
+                    <span></span>
+                </div>
+                
+                <div class="nomeLabel">
+                    <label for="tipoLogradouro">*Tipo de Logradouro:</label>
+                    <select id="tipoLogradouro" name="tipoLogradouro" required>
+                        <option value="" selected>Selecione...</option>
+                        <option value="rua">Rua</option>
+                        <option value="avenida">Avenida</option>
+                        <option value="praca">Praça</option>
+                        <option value="alameda">Alameda</option>
+                    </select>
+                </div>
+                
+                <div class="nomeLabel">
+                    <label for="logradouro">*Logradouro:</label>
+                    <input type="text" id="logradouro" name="logradouro" required>
+                </div>
+                
+                <div class="nomeLabel">
+                    <label for="bairro">*Bairro:</label>
+                    <input type="text" id="bairro" name="bairro" required>
+                </div>
+                
+                <div class="nomeLabel">
+                    <label for="cidade">*Cidade:</label>
+                    <input type="text" id="cidade" name="cidade" required>
+                </div>
+                
+                <div class="nomeLabel">
+                    <label for="estado">*Estado:</label>
+                    <select id="estado" name="estado" required>
+                        <option value="" selected>Selecione...</option>
+                        <option value="AC">Acre</option>
+                        <option value="AL">Alagoas</option>
+                        <option value="AP">Amapá</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="BA">Bahia</option>
+                        <option value="CE">Ceará</option>
+                        <option value="DF">Distrito Federal</option>
+                        <option value="ES">Espírito Santo</option>
+                        <option value="GO">Goiás</option>
+                        <option value="MA">Maranhão</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="PA">Pará</option>
+                        <option value="PB">Paraíba</option>
+                        <option value="PR">Paraná</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="PI">Piauí</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="RN">Rio Grande do Norte</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="RO">Rondônia</option>
+                        <option value="RR">Roraima</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="SE">Sergipe</option>
+                        <option value="TO">Tocantins</option>
+                    </select>
+                </div>
+                
+            </fieldset>
+
+            <fieldset>
+                <legend>Informações Adicionais</legend>
+                <div>
+                    <p>Selecione seus interesses:</p>
+
+                    <div>
+                        <input type="checkbox" id="filmes" name="interesses[]" value="filmes">
+                    <label for="filmes">Filmes</label>
+                    
+                    <input type="checkbox" id="informatica" name="interesses[]" value="informatica">
+                    <label for="informatica">Informática</label>
+                    
+                    <input type="checkbox" id="games" name="interesses[]" value="games">
+                    <label for="games">Games</label>
+                    
+                    <input type="checkbox" id="livros" name="interesses[]" value="livros">
+                    <label for="livros">Livros</label>
+
+                    </div>
+
+                    <div>
+                        <input type="checkbox" id="roupas" name="interesses[]" value="roupas">
+                    <label for="roupas">Roupas</label>
+                    
+                    <input type="checkbox" id="series" name="interesses[]" value="series">
+                    <label for="series">Séries</label>
+                    
+                    <input type="checkbox" id="culinaria" name="interesses[]" value="culinaria">
+                    <label for="culinaria">Culinária</label>
+                    
+                    <input type="checkbox" id="esportes" name="interesses[]" value="esportes">
+                    <label for="esportes">Esportes</label>
+                    
+                    </div>
+
+                
+                </div>               
+
+                <div class="nomeLabel">
+                    <label for="infoComplementares">Informações Complementares:</label>
+                    <textarea id="infoComplementares" name="infoComplementares" rows="5" cols="60" placeholder="Escreva aqui sua informações complementares"></textarea>
+
+                </div>
+                
+                <div class="nomeLabel">
+                    <label for="arquivos">Selecione seu(s) arquivo(s):</label>
+                    <input type="file" id="arquivos" name="arquivos" multiple> 
+                </div>
+                
+            </fieldset>            
+
+            <button>Enviar</button>
+            <!-- <input type="submit" value="Enviar"> -->
+
+        </form>
+        
+    </main>
+    
+</body>
+</html>

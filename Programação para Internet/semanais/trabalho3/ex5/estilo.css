@@ -1,0 +1,35 @@
+body{
+    background-color: lightgray
+}
+
+.formulario{
+    color: #555;
+    font-family: Arial;
+    width: 50%;
+    max-width: 300px;
+    padding: 30px;
+    background-color: white;
+    border: 0.8px solid #aaa;
+    border-radius: 10px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 5px #888;
+
+}
+
+button, input{
+    display: block;
+    margin: 10px 0px 20px 0px;
+    padding: 8px;
+    width: 100%;
+    border: 0.5px solid #888;
+    box-sizing: border-box;
+    
+}
+
+input:focus{
+    box-shadow: 0 0 5px #888;
+    outline: none;
+}
