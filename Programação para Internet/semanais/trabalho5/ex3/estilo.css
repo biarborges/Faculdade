@@ -1,0 +1,25 @@
+main{
+    padding: 10px;
+}
+
+article{
+    padding: 5px 10px;
+    margin: 5px 0;
+}
+
+h6{
+    font-weight: normal;
+    margin: 2px;
+}
+
+#rosa article{
+    background-color: rgb(238, 160, 160);
+}
+
+#verde article{
+    background-color: rgb(160, 238, 188);
+}
+
+#lilas article{
+    background-color: rgb(199, 160, 238);
+}
