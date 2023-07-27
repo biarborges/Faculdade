@@ -1,0 +1,82 @@
+classificacao de docs
+
+roda os imports
+
+pandas-le o csv
+o csv tem varios tweets
+r e as aspas duplas antes do endereco
+
+pandas=da um head o cabecalho doa dados
+nomes das colunas e alguns resultados
+queremos a coluna texto e classificacao (analise de sentimentos->pega um texto e extrai os sentimentos: neutro, positivo, negativo) -entra um tweet e ve se o tweet é neutro, +,-
+
+pandas-dataset.count quantos registro tem em cada coluna, tem 8000 tweets (tam da base de dados)
+
+dataset pra ver a quantidade de neutro, +,- => pra ver se tem o mesmo numero de cada um (base de dados balanceada)
+2000 neutros, 3000 +, 2000 -
+
+pegar as colunas texto e classificacao e coloca nas variaveis, vira um vetor
+
+criar modelo de classificacao:
+1) como representa os tweets (bag of words - tf-idf, monta o vocab, cada tweet vai ser um vetor de palavras)
+2) qual algoritmo de classificacao usar
+
+vai usar só o tf (analisar se rola usar so ele ou se rola usar tf-idf no lugar)
+countVectorizer(analyzer)--> tf-idf troca o countvectorizer - ja limpa tudo(caracteres, emojis)
+quando passa os tweets, faz a bow, ja calcula o tf
+
+multinomial (aqui eu troca a funcao q quero usar)
+analisa a bow e as classes (classificacao)
+fase de treinamento - fit
+
+agora é ver se o modelo é bom:
+testes manuais:
+pega tweets falsos pra testar se vai acertar entre neutro, +,-
+
+calcula com o vectorizer
+
+predict pra predizer
+
+tem q treinar só com um pedaço da base e com o resto testa
+dai da pra ver a precisao e revocacao
+
+
+holdout - pega 70% da base aleatoriamente e treina o resto testa
+
+crossvalidation - divide os conjunto de dados em varias partes e uma é separada pra teste e o resto todo pra treino
+k=10
+9 treino 1 teste
+dai depois pego outros 9 e deixa um pra teste
+faz isso ate percorrer todos 
+|  |x |x |x |x |x |x |x |x |x |
+|x | |x |x |x |x |x |x |x |x |
+usa o crossvalidation no nosso programa
+passa como parametro o modelo, os tweets e classes - ele divide sozinho as partes
+
+agora da pra testar maelhor
+
+acuracia=percentual de acertos para todas as classes
+problema de acuracia: n resolve tudo, quero o desempenho por classe, ele fala de uma media
+
+metrics classification report
+precisao(dos q falou q era neutro, qutos acerto
+revocacao(de todos os neutros, quanto acertou
+support(num de isntancias em cada classe
+nem sempre as duas estarao altas, tem q ver o q o modelo quer
+
+saber a quantidade de acertos por classe - n em porcentagem
+matriz de confusao crosstab
+real=era aquilo e ele chutou (predito
+neg e pos errou menos, mas errou, sao opostos mais facil de acertar
+o q mais confunde é + com neutro
+
+
+alteracao: bag of words -> trocar o tf por tf-idf ou por n-gram
+1-gram:
+eu, nao, gosto, dele
+2-gram
+eu nao, nao gosto, gosto dele
+
+roda tudo e compara a matriz de confusao
+
+ngram troca de 1 pra 2
